@@ -6,14 +6,14 @@ const PROJECTS = {
     title: 'Project Title',
     type: 'Character Design',
     images: [
-      'images/project1/full1.svg',
+      'images/project1/full1.jpg',
     ]
   },
   project2: {
     title: 'Environment Study',
     type: 'Environment',
     images: [
-      'images/project2/full1.svg',
+      'images/project2/full1.jpg',
     ]
   },
   project3: {
