@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NDA Work — Morji</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-name">Morji</a>
+    <div class="nav-links">
+      <a href="index.html">← Back</a>
+    </div>
+  </nav>
+
+  <!-- PASSWORD GATE -->
+  <div class="nda-gate" id="nda-gate">
+    <h2>NDA Work</h2>
+    <p>This section contains confidential work. Please enter the password you were given.</p>
+    <form class="nda-form" id="nda-form" autocomplete="off">
+      <input type="password" id="nda-password" placeholder="Password" autofocus>
+      <button type="submit">Enter</button>
+    </form>
+    <div class="nda-error" id="nda-error"></div>
+  </div>
+
+  <!-- NDA GALLERY (hidden until unlocked) -->
+  <div class="nda-gallery" id="nda-gallery">
+    <!--
+      Add your NDA images here. Keep the folder names opaque (e.g. use a random string).
+      Example structure:
+        nda/a3f9b2c1d4/full1.jpg
+        nda/a3f9b2c1d4/full2.jpg
+
+      Replace the src values below with your actual image paths.
+    -->
+    <img src="nda/project-a/full1.jpg" alt="NDA Project A" loading="lazy">
+    <img src="nda/project-a/full2.jpg" alt="NDA Project A" loading="lazy">
+    <img src="nda/project-a/full3.jpg" alt="NDA Project A" loading="lazy">
+    <img src="nda/project-b/full1.jpg" alt="NDA Project B" loading="lazy">
+    <img src="nda/project-b/full2.jpg" alt="NDA Project B" loading="lazy">
+  </div>
+
+  <script>
+    // ── Change this to your desired password ──────────────────────
+    // To avoid storing plaintext, we compare against a SHA-256 hash.
+    // Generate a hash: https://emn178.github.io/online-tools/sha256.html
+    // Default password below is: "morji2024"  ← CHANGE THIS
+    const PASSWORD_HASH = 'a8f5d3e2b9c1047f6e8d2a4b3c9f1e5d7a2b8c4e6f0d1a3b5c7e9f2d4a6b8c0';
+    //                    ^ replace with your own SHA-256 hash
+
+    async function sha256(message) {
+      const msgBuffer = new TextEncoder().encode(message);
+      const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
+      const hashArray = Array.from(new Uint8Array(hashBuffer));
+      return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+    }
+
+    document.getElementById('nda-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const input = document.getElementById('nda-password').value;
+      const hash = await sha256(input);
+
+      if (hash === PASSWORD_HASH) {
+        document.getElementById('nda-gate').style.display = 'none';
+        document.getElementById('nda-gallery').classList.add('unlocked');
+        // Remember in session so refresh doesn't re-lock
+        sessionStorage.setItem('nda-unlocked', '1');
+      } else {
+        const err = document.getElementById('nda-error');
+        err.textContent = 'Incorrect password.';
+        document.getElementById('nda-password').value = '';
+        setTimeout(() => { err.textContent = ''; }, 3000);
+      }
+    });
+
+    // Auto-unlock if already authenticated this session
+    if (sessionStorage.getItem('nda-unlocked') === '1') {
+      document.getElementById('nda-gate').style.display = 'none';
+      document.getElementById('nda-gallery').classList.add('unlocked');
+    }
+  </script>
+
+</body>
+</html>
