@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" width="1400" height="900">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a0a2e"/>
+      <stop offset="100%" style="stop-color:#4a1060"/>
+    </linearGradient>
+  </defs>
+  <rect width="1400" height="900" fill="url(#g)"/>
+  <ellipse cx="400" cy="280" rx="120" ry="160" fill="rgba(255,255,255,0.06)"/><ellipse cx="400" cy="200" rx="55" ry="55" fill="rgba(255,255,255,0.08)"/><line x1="400" y1="440" x2="320" y2="560" stroke="rgba(255,255,255,0.05)" stroke-width="2"/><line x1="400" y1="440" x2="480" y2="560" stroke="rgba(255,255,255,0.05)" stroke-width="2"/>
+  <text x="700" y="860" font-family="Helvetica Neue, Arial" font-size="14" fill="rgba(255,255,255,0.3)" text-anchor="middle" letter-spacing="4">CHARACTER DESIGN</text>
+</svg>

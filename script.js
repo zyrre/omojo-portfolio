@@ -6,46 +6,42 @@ const PROJECTS = {
     title: 'Project Title',
     type: 'Character Design',
     images: [
-      'images/project1/full1.jpg',
-      'images/project1/full2.jpg',
+      'images/project1/full1.svg',
     ]
   },
   project2: {
     title: 'Environment Study',
     type: 'Environment',
     images: [
-      'images/project2/full1.jpg',
+      'images/project2/full1.svg',
     ]
   },
   project3: {
     title: 'Creature Design',
     type: 'Creature',
     images: [
-      'images/project3/full1.jpg',
-      'images/project3/full2.jpg',
-      'images/project3/full3.jpg',
+      'images/project3/full1.svg',
     ]
   },
   project4: {
     title: 'Visual Dev',
     type: 'Visual Development',
     images: [
-      'images/project4/full1.jpg',
+      'images/project4/full1.svg',
     ]
   },
   project5: {
     title: 'Keyframe',
     type: 'Keyframe Art',
     images: [
-      'images/project5/full1.jpg',
-      'images/project5/full2.jpg',
+      'images/project5/full1.svg',
     ]
   },
   project6: {
     title: 'Character Sheet',
     type: 'Character Design',
     images: [
-      'images/project6/full1.jpg',
+      'images/project6/full1.svg',
     ]
   },
 };

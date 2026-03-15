@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" width="1400" height="900">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a0a0a"/>
+      <stop offset="100%" style="stop-color:#3a1010"/>
+    </linearGradient>
+  </defs>
+  <rect width="1400" height="900" fill="url(#g)"/>
+  <polygon points="400,80 480,220 620,240 510,350 540,490 400,420 260,490 290,350 180,240 320,220" fill="rgba(255,255,255,0.06)"/><circle cx="400" cy="300" r="80" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+  <text x="700" y="860" font-family="Helvetica Neue, Arial" font-size="14" fill="rgba(255,255,255,0.3)" text-anchor="middle" letter-spacing="4">CREATURE</text>
+</svg>
